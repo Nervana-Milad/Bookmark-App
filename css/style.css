@@ -1,0 +1,72 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+@font-face {
+  font-family: PermanentMaker;
+  src: url(../fonts/PermanentMarker-Regular.woff2),
+    url(../fonts/PermanentMarker-Regular.woff),
+    url(../fonts/PermanentMarker-Regular.ttf);
+}
+
+*::selection {
+  background-color: #00ff22;
+  /* color: #333; */
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: PermanentMaker;
+  display: inline-block;
+}
+
+h1::before {
+  content: "";
+  position: absolute;
+  height: 1rem;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 3px;
+  background-color: #00ff22;
+  margin: 0 auto;
+  z-index: -1;
+  transition: height 350ms;
+}
+
+h1:hover::before {
+  height: 3rem;
+}
+
+.bookmark {
+  color: #00ff22;
+}
+
+.btn-success {
+  --bs-btn-color: black;
+  --bs-btn-bg: #00ff22;
+  --bs-btn-border-color: 00ff22;
+  --bs-btn-hover-color: black;
+  --bs-btn-hover-bg: #47d55a;
+  --bs-btn-hover-border-color: #47d55a;
+}
+
+.form-btn:focus {
+  outline: none;
+  border: 2px solid #00ff22;
+}
+
+.inputLabel {
+  background: -webkit-linear-gradient(#00ff22, #4e49f5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body {
+  background-image: url("../imgs/10837496_19449741.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}

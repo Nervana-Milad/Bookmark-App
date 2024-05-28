@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <section class="py-5">
+      <div class="container">
+        <div class="text-center">
+          <h1 class="position-relative">Bookmarker</h1>
+        </div>
+        <h3 class="d-flex justify-content-center py-5">
+          <i class="fa-solid fa-bookmark me-2 bookmark"></i>
+          Bookmark your favorite sites
+          <i class="fa-solid fa-bookmark ms-2 bookmark"></i>
+        </h3>
+        <div class="form">
+          <div class="mb-3">
+            <i class="fa-solid fa-book-bookmark me-2"></i>
+            <label
+              for="siteName"
+              class="form-label fw-bold mt-3 mb-3 inputLabel"
+              >Site Name</label
+            >
+            <input
+              type="text"
+              id="siteName"
+              class="form-control form-btn"
+              id="siteName"
+              placeholder="Bookmark Name"
+            />
+            <span id="nameValidation" class="text-danger"> </span>
+          </div>
+          <div class="mb-3">
+            <i class="fa-solid fa-link"></i>
+            <label for="siteURL" class="form-label fw-bold mt-3 mb-3 inputLabel"
+              >Site URL</label
+            >
+            <input
+              type="url"
+              id="siteURL"
+              class="form-control form-btn"
+              id="siteURL"
+              placeholder="Website URL"
+            />
+            <span id="urlValidation" class="text-danger"> </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center pb-2 pt-5">
+        <button class="btn btn-success" onclick="addBookmark()">Submit</button>
+      </div>
+    </section>
+    <!-- <section class="w-75 m-auto text-center">
+      <div class="container">
+        <div class="row text-center">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Index</th>
+                <th scope="col">Website Name</th>
+                <th scope="col">Visit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+
+            <tbody id="bookmarkRow"></tbody>
+          </table>
+        </div>
+      </div>
+    </section> -->
+    <section class="text-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Index</th>
+                    <th scope="col">Website Name</th>
+                    <th scope="col">Visit</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="bookmarkRow"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script
+      src="https://kit.fontawesome.com/7ec47829ba.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
