@@ -3,7 +3,15 @@ var siteURLInput = document.getElementById("siteURL");
 
 var nameValidation = document.getElementById("nameValidation");
 var urlValidation = document.getElementById("urlValidation");
+var localBookmark = "allBookmarks";
 var allBookmarks = [];
+
+if (JSON.parse(localStorage.getItem(localBookmark)) == null) {
+  allBookmarks = [];
+} else {
+  allBookmarks = JSON.parse(localStorage.getItem(localBookmark));
+  displayBookmarks(allBookmarks);
+}
 
 function addBookmark() {
   var bookmark = {
@@ -15,6 +23,8 @@ function addBookmark() {
 
   if (isNameValid && isUrlValid) {
     allBookmarks.push(bookmark);
+    addToLocalStorage();
+    // displayBookmarks();
     urlValidation.textContent = "";
     nameValidation.textContent = "";
     clearForm();
@@ -31,6 +41,10 @@ function addBookmark() {
 
   displayBookmarks();
   console.log(allBookmarks);
+}
+
+function addToLocalStorage() {
+  localStorage.setItem(localBookmark, JSON.stringify(allBookmarks));
 }
 
 function isValidName(name) {
@@ -85,6 +99,7 @@ function displayBookmarks() {
 
 function deleteBookmark(index) {
   allBookmarks.splice(index, 1);
-  console.log(allBookmarks);
+  addToLocalStorage();
+  // console.log(allBookmarks);
   displayBookmarks();
 }
